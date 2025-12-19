@@ -118,7 +118,7 @@ class WelcomePanel extends JPanel {
             }
         };
 
-        startBtn.setFont(new Font("Courier New", Font.BOLD, 24));
+        startBtn.setFont(new Font("Verdana", Font.BOLD, 24));
         startBtn.setForeground(Color.WHITE);
         startBtn.setBounds(300, 400, 400, 80);
         startBtn.setFocusPainted(false);
@@ -223,7 +223,7 @@ class WelcomePanel extends JPanel {
 
         // Shadow
         g2.setColor(new Color(0, 0, 0, 100));
-        g2.setFont(new Font("Courier New", Font.BOLD, 72));
+        g2.setFont(new Font("Verdana", Font.BOLD, 72));
         String title = "MAZE ADVENTURE";
         FontMetrics fm = g2.getFontMetrics();
         int titleWidth = fm.stringWidth(title);
@@ -250,7 +250,7 @@ class WelcomePanel extends JPanel {
 
         // Subtitle
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, titleAlpha * 0.8f));
-        g2.setFont(new Font("Courier New", Font.PLAIN, 24));
+        g2.setFont(new Font("Verdana", Font.PLAIN, 24));
         g2.setColor(new Color(70, 70, 70));
         String subtitle = "Explore • Discover • Conquer";
         int subtitleWidth = g2.getFontMetrics().stringWidth(subtitle);
