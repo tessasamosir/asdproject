@@ -1,5 +1,3 @@
-public class UnifiedBackgroundPanel {
-}
 class UnifiedBackgroundPanel extends JPanel {
     private Image bg;
 

@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class RoundedButton {
     class RoundedButton extends JButton {
         private int radius;
 
@@ -24,4 +23,3 @@ public class RoundedButton {
             super.paintComponent(g);
         }
     }
-}

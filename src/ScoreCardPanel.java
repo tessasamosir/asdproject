@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class ScoreCardPanel {
     class ScoreCardPanel extends RoundedPanel {
         private JLabel nameLabel;
         private JLabel scoreLabel;
@@ -35,4 +34,4 @@ public class ScoreCardPanel {
             scoreLabel.setText(String.valueOf(player.getScore()));
         }
     }
-}
+

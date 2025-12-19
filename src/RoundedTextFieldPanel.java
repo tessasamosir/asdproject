@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class RoundedTextFieldPanel {
     class RoundedTextFieldPanel extends JPanel {
         private int radius;
 
@@ -28,4 +27,3 @@ public class RoundedTextFieldPanel {
             super.paintComponent(g);
         }
     }
-}

@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class RoundedPanel {
     class RoundedPanel extends JPanel {
         private int radius;
 
@@ -31,4 +30,3 @@ public class RoundedPanel {
         }
 
     }
-}
