@@ -4,41 +4,36 @@ import javax.sound.sampled.*;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 
-import javax.sound.sampled.*;
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-
-public class BackgroundSound {
+class BackgroundSound {
     private Clip clip;
 
-    public BackgroundSound() {
-        // Constructor kosong atau inisialisasi lain
-    }
-
-    public void play(String resourcePath) {  // contoh: "/sound/filename.wav" kalau di src/sound
+    public void play(String path, boolean loop) {
         try {
-            // Gunakan getResourceAsStream agar bisa dari dalam JAR
-            InputStream is = getClass().getResourceAsStream(resourcePath);
-            if (is == null) {
-                throw new RuntimeException("File audio tidak ditemukan: " + resourcePath);
+            InputStream audioSrc = getClass().getResourceAsStream(path);
+            if (audioSrc == null) {
+                throw new RuntimeException("File audio tidak ditemukan: " + path);
             }
 
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(
-                    new BufferedInputStream(is)
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(
+                    new BufferedInputStream(audioSrc)
             );
 
             clip = AudioSystem.getClip();
-            clip.open(audioIn);
-            clip.loop(Clip.LOOP_CONTINUOUSLY);  // untuk background music
-            clip.start();
+            clip.open(audioStream);
+
+            if (loop) {
+                clip.loop(Clip.LOOP_CONTINUOUSLY);
+            } else {
+                clip.start();
+            }
 
         } catch (Exception e) {
-            throw new RuntimeException("Gagal memutar audio: " + resourcePath, e);
+            e.printStackTrace();
         }
     }
 
     public void stop() {
-        if (clip != null && clip.isRunning()) {
+        if (clip != null) {
             clip.stop();
             clip.close();
         }
