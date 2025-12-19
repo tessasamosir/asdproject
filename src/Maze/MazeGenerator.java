@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-
 class MazeGenerator {
     private int rows, cols;
     private int[][] maze;

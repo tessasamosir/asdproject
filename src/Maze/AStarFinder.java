@@ -1,8 +1,10 @@
 package Maze;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.*;
+import java.util.*;
 
 class AStarFinder extends PathFinder {
     AStarFinder(int[][] maze, TerrainType[][] terrain, Position start, Position goal) {

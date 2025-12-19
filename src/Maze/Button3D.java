@@ -2,8 +2,9 @@ package Maze;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
+import java.awt.geom.*;
+import java.util.*;
 
 class Button3D extends JButton {
     private Color topColor;

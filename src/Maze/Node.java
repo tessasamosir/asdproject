@@ -1,5 +1,11 @@
 package Maze;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.*;
+import java.util.*;
+
 
 // Kelas untuk node dalam pathfinding dengan terrain cost
 class Node implements Comparable<Node> {

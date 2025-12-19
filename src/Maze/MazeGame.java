@@ -1,11 +1,15 @@
 package Maze;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.*;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Random;
 import java.util.Set;
 import javax.swing.*;
@@ -13,6 +17,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
 
+// Kelas utama untuk menjalankan game dengan welcome screen
 public class MazeGame extends JFrame {
     private int[][] maze;
     private TerrainType[][] terrain;
@@ -29,16 +34,31 @@ public class MazeGame extends JFrame {
     private JTextArea infoArea;
     private BackgroundSound bgSound;
 
-
     public MazeGame() {
         setTitle("Maze Adventure - Peta Pencarian Jalan");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1000, 700);
+        setLocationRelativeTo(null);
+
+        // Tampilkan welcome screen dulu
+        WelcomePanel welcomePanel = new WelcomePanel(() -> {
+            // Setelah klik START, hapus welcome dan tampilkan game
+            getContentPane().removeAll();
+            initializeGame();
+            revalidate();
+            repaint();
+        });
+
+        add(welcomePanel);
+        setVisible(true);
+    }
+
+    private void initializeGame() {
         setLayout(new BorderLayout(10, 10));
         getContentPane().setBackground(new Color(165, 214, 167));
 
-        // Tambahkan background sound
         bgSound = new BackgroundSound();
-        bgSound.play("SoundMaze/Mario Bros.wav", true);
+        bgSound.play("sound/mario_theme.wav", true);
 
         MazeGenerator generator = new MazeGenerator(25, 35);
         maze = generator.generate();
@@ -140,8 +160,6 @@ public class MazeGame extends JFrame {
         add(infoPanel, BorderLayout.SOUTH);
 
         pack();
-        setLocationRelativeTo(null);
-        setVisible(true);
     }
 
     private void setupPositions() {

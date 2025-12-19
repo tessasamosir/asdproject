@@ -1,5 +1,11 @@
 package Maze;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.*;
+import java.util.*;
+
 // DFS Algorithm dengan terrain cost
 class DFSFinder extends PathFinder {
     DFSFinder(int[][] maze, TerrainType[][] terrain, Position start, Position goal) {

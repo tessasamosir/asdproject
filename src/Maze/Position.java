@@ -1,6 +1,10 @@
 package Maze;
 
-import java.util.Objects;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.*;
+import java.util.*;
 
 
 // Kelas untuk merepresentasikan posisi dalam maze
