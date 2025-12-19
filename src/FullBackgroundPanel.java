@@ -1,3 +1,10 @@
+import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
+
 class FullBackgroundPanel extends JPanel {
     private Image bg;
     private float opacity = 0.35f; // ⬅ TURUNKAN / NAIKKAN DI SINI

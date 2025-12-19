@@ -1,3 +1,11 @@
+import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.*;
+
+import java.awt.*;
+
 class ImageBackgroundPanel extends JPanel {
     private Image backgroundImage;
     private float opacity = 0.3f; // ⬅ sama kayak board kiri

@@ -1,3 +1,5 @@
+import java.util.*;
+
 class GameBoard {
     private static final int SIZE = 8;
     private static final int TOTAL_CELLS = SIZE * SIZE;

@@ -1,3 +1,5 @@
+import java.util.*;
+
 class PrimeNumberFinder {
     private boolean[] isPrimeArray;
     private int maxNumber;
