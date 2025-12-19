@@ -1,41 +1,31 @@
 package Maze;
 
 import javax.sound.sampled.*;
-import java.io.BufferedInputStream;
-import java.io.InputStream;
+import java.io.*;
 
-class BackgroundSound {
-    private Clip clip;
-
-    public void play(String path, boolean loop) {
+public class BackgroundSound {
+    public void play(String resourcePath, boolean loop) {
         try {
-            InputStream audioSrc = getClass().getResourceAsStream(path);
+            // Cara yang benar untuk load dari resources
+            InputStream audioSrc = getClass().getClassLoader().getResourceAsStream(resourcePath);
             if (audioSrc == null) {
-                throw new RuntimeException("File audio tidak ditemukan: " + path);
+                throw new RuntimeException("File audio tidak ditemukan: " + resourcePath);
             }
 
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(
-                    new BufferedInputStream(audioSrc)
-            );
+            // Buffered supaya bisa dibaca ulang kalau perlu
+            BufferedInputStream bufferedIn = new BufferedInputStream(audioSrc);
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(bufferedIn);
 
-            clip = AudioSystem.getClip();
+            Clip clip = AudioSystem.getClip();
             clip.open(audioStream);
 
             if (loop) {
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
-            } else {
-                clip.start();
             }
+            clip.start();
 
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void stop() {
-        if (clip != null) {
-            clip.stop();
-            clip.close();
+            throw new RuntimeException("Error playing sound: " + e.getMessage(), e);
         }
     }
 }
