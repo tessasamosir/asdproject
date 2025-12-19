@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.Random;
+
 
 class Dice {
     private Random random;

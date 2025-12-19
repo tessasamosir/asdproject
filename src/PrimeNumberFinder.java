@@ -22,6 +22,7 @@ class PrimeNumberFinder {
             }
         }
     }
+
     public boolean isPrime(int number) {
         if (number < 0 || number > maxNumber) return false;
         return isPrimeArray[number];
