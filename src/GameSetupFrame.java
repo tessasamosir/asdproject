@@ -111,3 +111,86 @@ class GameSetupFrame extends JFrame {
 
         setVisible(true);
     }
+
+    private void addPlayer() {
+        playerCount++;
+
+        String defaultName = "";
+        String imagePath = null;
+        Color playerColor = playerColors[(playerCount - 1) % playerColors.length];
+
+        PlayerSetupPanel playerPanel = new PlayerSetupPanel(
+                playerCount,
+                defaultName,
+                imagePath,
+                playerColor,
+                this
+        );
+
+        playerPanels.add(playerPanel);
+        playerPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 60));
+        playerPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        playerListPanel.add(Box.createVerticalStrut(25));
+        playerListPanel.add(playerPanel);
+
+
+        playerListPanel.revalidate();
+        playerListPanel.repaint();
+
+        if (playerCount >= 2) {
+            startButton.setEnabled(true);
+        }
+
+        SwingUtilities.invokeLater(() -> {
+            JScrollBar vertical = ((JScrollPane)playerListPanel.getParent().getParent()).getVerticalScrollBar();
+            vertical.setValue(vertical.getMaximum());
+        });
+    }
+
+    public void removePlayer(PlayerSetupPanel panel) {
+        if (playerPanels.size() <= 2) {
+            JOptionPane.showMessageDialog(this,
+                    "Minimum 2 players required!",
+                    "Warning",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        playerPanels.remove(panel);
+        playerListPanel.remove(panel);
+        playerCount--;
+
+        for (int i = 0; i < playerPanels.size(); i++) {
+            playerPanels.get(i).updatePlayerNumber(i + 1);
+        }
+
+        playerListPanel.revalidate();
+        playerListPanel.repaint();
+
+        if (playerCount < 2) {
+            startButton.setEnabled(false);
+        }
+    }
+
+    private void startGame() {
+        if (playerPanels.size() < 2) {
+            JOptionPane.showMessageDialog(this, "Minimum 2 players required!");
+            return;
+        }
+
+        List<Player> players = new ArrayList<>();
+
+        for (int i = 0; i < playerPanels.size(); i++) {
+            PlayerSetupPanel panel = playerPanels.get(i);
+            String name = panel.getPlayerName().trim();
+            if (name.isEmpty() || name.equals("Enter player name")) {
+                name = "Player " + (i + 1);
+            }
+            players.add(new Player(name, i, null));
+        }
+
+        dispose();
+        new GameFrame(players);
+    }
+}
