@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.List;
 
+
 class MazePanel extends JPanel {
     private int[][] maze;
     private TerrainType[][] terrain;

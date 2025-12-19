@@ -1,3 +1,5 @@
+package Maze;
+
 // DFS Algorithm dengan terrain cost
 class DFSFinder extends PathFinder {
     DFSFinder(int[][] maze, TerrainType[][] terrain, Position start, Position goal) {

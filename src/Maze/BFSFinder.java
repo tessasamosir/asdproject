@@ -1,7 +1,10 @@
+package Maze;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
+
 
 // BFS Algorithm dengan terrain cost
 class BFSFinder extends PathFinder {

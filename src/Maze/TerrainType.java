@@ -1,3 +1,6 @@
+package Maze;
+
+
 import java.awt.*;
 
 // Enum untuk tipe terrain

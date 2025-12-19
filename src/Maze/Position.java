@@ -1,4 +1,7 @@
+package Maze;
+
 import java.util.Objects;
+
 
 // Kelas untuk merepresentasikan posisi dalam maze
 class Position {

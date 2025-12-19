@@ -1,3 +1,6 @@
+package Maze;
+
+
 // Kelas untuk node dalam pathfinding dengan terrain cost
 class Node implements Comparable<Node> {
     Position pos;

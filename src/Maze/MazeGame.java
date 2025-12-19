@@ -4,6 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.*;
 
 public class MazeGame extends JFrame {
     private int[][] maze;
@@ -30,7 +38,7 @@ public class MazeGame extends JFrame {
 
         // Tambahkan background sound
         bgSound = new BackgroundSound();
-        bgSound.play("/sound/Mario Bros.wav", true);
+        bgSound.play("sound/1766126505_Super Mario Bros. Theme Song_NTa6Xbzfq1U_default (1).wav", true);
 
 
         MazeGenerator generator = new MazeGenerator(25, 35);
