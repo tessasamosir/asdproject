@@ -10,10 +10,10 @@ class AudioPlayer {
     private static Clip backgroundClip;
     private static boolean isMusicPlaying = false;
 
-    private static final String BACKGROUND_MUSIC_PATH = "C:\\Users\\echaa\\IdeaProjects\\asdproject\\sound\\Kristen Bell, Idina Menzel - For the First Time in Forever (From Frozen_Sing-Along) (1).wav";
-    private static final String DICE_SOUND_PATH = "C:\\Users\\echaa\\IdeaProjects\\asdproject\\sound\\ytmp3free.cc_dice-sound-effect-youtubemp3free.org.wav";
-    private static final String SUCCESS_SOUND_PATH = "C:\\Users\\echaa\\IdeaProjects\\asdproject\\sound\\ytmp3free.cc_success-sound-effect-youtubemp3free.org.wav";
-    private static final String WIN_SOUND_PATH = "C:\\Users\\echaa\\IdeaProjects\\asdproject\\sound\\ytmp3free.cc_victory-sound-effect-youtubemp3free.org.wav";
+    private static final String BACKGROUND_MUSIC_PATH = "sound/Kristen Bell, Idina Menzel - For the First Time in Forever (From Frozen_Sing-Along) (1).wav";
+    private static final String DICE_SOUND_PATH = "sound/ytmp3free.cc_dice-sound-effect-youtubemp3free.org.wav";
+    private static final String SUCCESS_SOUND_PATH = "sound/ytmp3free.cc_success-sound-effect-youtubemp3free.org.wav";
+    private static final String WIN_SOUND_PATH = "sound/ytmp3free.cc_victory-sound-effect-youtubemp3free.org.wav";
 
     public static void playBackgroundMusic() {
         try {

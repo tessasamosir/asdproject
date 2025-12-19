@@ -93,7 +93,7 @@ class GameFrame extends JFrame {
         diceIcons = new ImageIcon[6];
         for (int i = 0; i < 6; i++) {
             diceIcons[i] = loadDiceIcon(
-                    "C:\\Users\\echaa\\IdeaProjects\\asdproject\\images\\dice" + (i + 1) + ".png"
+                    "images/dice" + (i + 1) + ".png"
             );
         }
 
@@ -176,7 +176,7 @@ class GameFrame extends JFrame {
         }
 
         JPanel mainBg = new UnifiedBackgroundPanel(
-                "C:\\Users\\echaa\\IdeaProjects\\asdproject\\images\\back_1.jpeg"
+                "images/back_1.jpeg"
         );
 
         mainBg.add(boardPanel, BorderLayout.WEST);

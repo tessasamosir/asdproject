@@ -21,7 +21,7 @@ class GameBoardPanel extends JPanel {
         setOpaque(true);
 
         try {
-            String imagePath = "C:\\Users\\echaa\\IdeaProjects\\asdproject\\images\\back.jpeg";
+            String imagePath = "images/back.jpeg";
             backgroundImage = new ImageIcon(imagePath).getImage();
         } catch (Exception e) {
             backgroundImage = null;

@@ -28,7 +28,7 @@ class GameSetupFrame extends JFrame {
         setLocationRelativeTo(null);
 
         FullBackgroundPanel mainPanel =
-                new FullBackgroundPanel("C:\\Users\\echaa\\IdeaProjects\\untitled1\\images\\back.jpeg");
+                new FullBackgroundPanel("images/back.jpeg");
 
         mainPanel.setLayout(new BorderLayout(10, 10));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
