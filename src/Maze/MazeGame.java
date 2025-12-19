@@ -58,7 +58,7 @@ public class MazeGame extends JFrame {
         getContentPane().setBackground(new Color(165, 214, 167));
 
         bgSound = new BackgroundSound();
-        bgSound.play("sound/mario_theme.wav", true);
+        bgSound.play("SoundMaze/Mario Bros.wav", true);
 
         MazeGenerator generator = new MazeGenerator(25, 35);
         maze = generator.generate();
