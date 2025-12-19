@@ -93,7 +93,7 @@ class GameFrame extends JFrame {
         diceIcons = new ImageIcon[6];
         for (int i = 0; i < 6; i++) {
             diceIcons[i] = loadDiceIcon(
-                    "C:\\Users\\echaa\\IdeaProjects\\asdprojects\\images\\dice" + (i + 1) + ".png"
+                    "C:\\Users\\echaa\\IdeaProjects\\asdproject\\images\\dice" + (i + 1) + ".png"
             );
         }
 
